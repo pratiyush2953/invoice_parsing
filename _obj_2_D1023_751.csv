@@ -1,0 +1,20 @@
+Invoice #,Invoice Date,Day,Line Item Description,Employee Name,Service Date,County,Location,Work Order #,Hours/Qty,Units,Rate,Invoiced Amount,Sub-Total,Sales-Tax,Total,Original File,Invoice Pages
+845,5/23/2022,Monday,Automation Tech II - Anthony Ramirez,Anthony Ramirez,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,8,hour,110.00,880.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech I - OT Labor - Anthony Ramirez,Anthony Ramirez,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,2,hour,165.00,330.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech II - Javier Sanchez,Javier Sanchez,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,8,hour,110.00,880.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech fH - OT Labor - Javier Sanchez,Javier Sanchez,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,2,hour,165.00,330.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech If - Levi Cockrill,Levi Cockrill,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,8,hour,120.00,960.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech HI - OT Labor - Levi Cockrill,Levi Cockrill,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,2,hour,180.00,360.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech Il - Jeffrey Loustaunau,Jeffrey Loustaunau,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,8,hour,110.00,880.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech Il - OT Labor - Jeffrey Loustaunau,Jeffrey Loustaunau,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,2,hour,165.00,330.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech II - Brian Galvan,Brian Galvan,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,8,hour,110.00,880.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/23/2022,Monday,Automation Tech Ht - OT Labor - Brian Gautvan,Brian Galvan,5/23/2022,Red Hills,2000 E. 42nd St. Ste C-293,0719,2,hour,165.00,330.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 1
+845,5/24/2022,Tuesday,Automation Tech Ill - Lance Touchet,Lance Touchet,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,4,person,70.00,280.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Automation Tech Ili - OT Labor - Lance Touchet,Audon Saldivar,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,1,person,105.00,105.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Automation Tech IIL - Audon Saldivar,Audon Saldivar,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,8,hour,120.00,960.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Automation Tech HI - OT Labor - Audon Saldivar,Lizet Gomez,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,2,hour,180.00,360.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Project Manager - Lizet Gomez,Lizet Gomez,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,3,person,110.00,880.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Project Manager - OT Labor - Lizet Gomez,Levi Cockrill,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,2,person,165.00,330.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Service Truck - Unit 6194,Levi Cockrill,5/24/2022,Red Hills,2000 E. 42nd St. Ste C-293,0721,3,hour,120.00,360.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 2
+845,5/24/2022,Tuesday,Tech Service Truck - Unit 7340,Jeffrey Loustaunau,5/25/2022,Red Hills,2000 E. 42nd St. Ste C-293,0725,8,hour,180.00,360.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 3
+845,5/24/2022,Tuesday,Service Truck - Unit 6193,Audon Saldivar,5/25/2022,Red Hills,2000 E. 42nd St. Ste C-293,0725,2,hour,70.00,280.00,NaN,5.125%,NaN,public_obj_2_D1023_751.PDF,Page 3
