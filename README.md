@@ -1,96 +1,85 @@
-Invoice Data Extraction and CSV Conversion
-This repository contains a Python script that extracts structured invoice data from PDF files and converts it into a CSV format. The process utilizes advanced AI capabilities for data extraction using Groq's language model and PyMuPDF for PDF text extraction. The script provides a user-friendly interface for inputting file paths, performing the data extraction, and saving the structured data in a CSV file format.
+# Invoice Extraction and Parsing with Groq LLM
 
-Features
-PDF Text Extraction: Extracts text content from PDF invoices using the pymupdf4llm library.
-Invoice Data Parsing: Uses Groq's large language model (LLM) to analyze and structure the invoice data.
-CSV Conversion: Converts structured invoice data into a well-organized CSV format.
-Error Handling: Robust error handling for PDF extraction, data parsing, and CSV writing.
-Environment Configuration: Loads sensitive configuration values like API keys from environment variables.
-Installation
-Prerequisites
-Before running the script, ensure you have Python 3.x installed on your system. You will also need the following dependencies:
+This project provides a tool to extract, parse, and convert invoice data from PDF documents into a structured CSV format. It uses a combination of libraries like `pymupdf4llm` for PDF text extraction, `Groq LLM` for natural language processing, and outputs the data as CSV files for further use.
 
-pymupdf
-pymupdf4llm
-groq
-anthropic
-instructor
-python-dotenv
-Step 1: Install Required Libraries
-You can install all the necessary libraries by running the following command:
+## Features
+
+- **Extract Text from PDF**: Converts text from PDF files to Markdown format using the `pymupdf4llm` library.
+- **Parse Invoice Data**: Uses the Groq LLM to process the extracted text and convert it into structured JSON data.
+- **Export to CSV**: Converts the structured JSON data into a CSV format that is suitable for further analysis.
+- **Folder Management**: Automatically creates a folder if it doesn't already exist for saving the output CSV files.
+- **Dynamic Invoice Parsing**: Supports extraction of key invoice fields such as `Invoice #`, `Invoice Date`, `Line Item Description`, `Service Date`, and more.
+
+## Requirements
+
+To run this project, you will need the following Python libraries:
+
+```bash
+pip install -q pymupdf pymupdf4llm groq anthropic instructor python-dotenv
+pymupdf: PDF text extraction library.
+pymupdf4llm: Used to convert the extracted PDF text into a markdown format.
+groq: A Groq client for interacting with Groq LLM APIs.
+anthropic: Required for specific functionalities (if needed).
+instructor: Used for integrating Groq with custom functions.
+python-dotenv: Loads environment variables from .env files.
+Additionally, you will need a Groq API key, which should be saved in a .env file in your project directory.
+
+Setup Instructions
+1. Clone the Repository
+bash
+Copy code
+git clone https://github.com/yourusername/invoice-extraction.git
+cd invoice-extraction
+2. Install Dependencies
+Use pip to install the required Python packages:
 
 bash
 Copy code
-!pip install -q pymupdf pymupdf4llm groq anthropic instructor python-dotenv
-Step 2: Configure Environment Variables
-Create a .env file in the project directory to securely store your API keys. The .env file should contain the following:
+pip install -q pymupdf pymupdf4llm groq anthropic instructor python-dotenv
+3. Set Up Environment Variables
+Create a .env file in the root of the project with your Groq API key:
 
-env
+bash
 Copy code
 GROQ_API_KEY=your_api_key_here
-Replace your_api_key_here with your actual API key from Groq.
+Replace your_api_key_here with your actual API key provided by Groq.
 
-Step 3: Ensure Python Environment
-Make sure to run the script in an environment where all dependencies are available, such as a virtual environment.
-
-Usage
-Running the Script
-To run the script, simply execute the Python file. You will be prompted to enter the file path of the PDF you want to extract data from. The structured data will be extracted and saved in a CSV format in the RESULT_CSV folder.
+4. Run the Application
+Run the main Python script to extract and parse data from your PDF file:
 
 bash
 Copy code
-python implementation_code.py
-Parameters
-PDF File Path: The script requires the path to a PDF file containing invoice data.
+python main.py
+The script will ask you for the path of the PDF you want to process, and it will save the output as a CSV file in the RESULT_CSV folder.
 
-The PDF should follow a consistent format with invoicing details.
-The script extracts key data like invoice number, date, item description, quantity, rate, and total.
-Output Folder: The script saves the resulting CSV in a folder called RESULT_CSV. If the folder doesn't exist, it will be created automatically.
+Code Overview
+main.py
+This is the main script that orchestrates the workflow:
 
-Output CSV: The extracted invoice data is saved in a CSV file with a name based on the PDF file (e.g., invoice_123.csv).
+Extracts text from a PDF file.
+Passes the extracted text to Groq LLM for parsing and structuring the data.
+Converts the structured data into a CSV format.
+Saves the CSV file in a specified directory.
+Key Functions
+create_folder(folder_path): Creates a folder if it doesn't already exist.
+extract_text_from_pdf(pdf_path): Extracts text from the given PDF file using the pymupdf4llm library.
+parse_with_groq_llm(extracted_text, pdf_file_path): Sends the extracted text to the Groq LLM for structured data extraction.
+json_to_csv(json_string, file_name): Converts the extracted JSON data into a CSV file.
+main(): The entry point that ties everything together—handles user input, file processing, and output.
+How It Works
+Text Extraction: The script begins by extracting the raw text from the provided PDF using the pymupdf4llm library. It splits the text into different invoices.
+Data Parsing with Groq: The extracted text is then passed to Groq LLM to extract structured data, such as Invoice #, Service Date, Employee Name, Item Description, etc.
+Exporting to CSV: The parsed JSON is then converted into a CSV file, where each row represents a line item in the invoice. The CSV file will have columns like Invoice #, Line Item Description, Service Date, etc.
+Folder Creation: The script checks if the RESULT_CSV folder exists and creates it if not. The output CSV is saved inside this folder.
+Sample Output CSV
+Here is an example of how the output CSV might look after processing a sample invoice:
 
-Expected Output
-After running the script, you will find the CSV file in the RESULT_CSV folder. The CSV file will contain the following columns, extracted from the invoice:
+Invoice #	Invoice Date	Day	Line Item Description	Employee Name	Service Date	County	Location	Work Order #	Hours/Qty	Units	Rate	Invoiced Amount	Sub-Total	Sales-Tax	Total	Original File	Invoice Pages
+12345	2024-12-01	Monday	Web Development	John Doe	2024-11-30	Sample	Location A	WO123	5	hour	50	250	250	15	287.5	invoice.pdf	1
+12345	2024-12-01	Monday	Hosting	John Doe	2024-11-29	Sample	Location A	WO123	2	hour	75	150	250	15	287.5	invoice.pdf	1
+Troubleshooting
+If you encounter any issues, here are some common solutions:
 
-Invoice #: The unique invoice identifier.
-Invoice Date: The date the invoice was issued.
-Day: The day of the week corresponding to the service date.
-Line Item Description: Description of the items/services invoiced.
-Employee Name: Name of the employee associated with the invoice.
-Service Date: Date when the service was performed.
-County: The county where the service was provided.
-Location: Specific location details.
-Work Order #: Work order number.
-Hours/Qty: Number of hours worked or quantity of items.
-Units: Units used (e.g., hour, kg).
-Rate: Rate charged per unit.
-Invoiced Amount: Amount charged for each line item.
-Sub-Total: Subtotal before taxes.
-Sales-Tax: Sales tax percentage applied to the invoice.
-Total: Total invoice amount, including tax.
-Original File: The name of the original PDF file.
-Invoice Pages: Page numbers of the original invoice.
-Example Output
-csv
-Copy code
-Invoice #,Invoice Date,Day,Line Item Description,Employee Name,Service Date,County,Location,Work Order #,Hours/Qty,Units,Rate,Invoiced Amount,Sub-Total,Sales-Tax,Total,Original File,Invoice Pages
-INV123,2023-12-25,Monday,Web development services,John Doe,2023-12-20,SomeCounty,Location1,WO456,5,hours,100,500,500,10,550,invoice_123.pdf,1
-INV123,2023-12-25,Monday,SEO services,John Doe,2023-12-21,SomeCounty,Location1,WO456,3,hours,80,240,240,10,264,invoice_123.pdf,1
-...
-Code Explanation
-The code is structured as follows:
-
-Environment Setup: The script loads environment variables (such as API keys) using python-dotenv.
-PDF Text Extraction: The function extract_text_from_pdf uses pymupdf4llm to extract text from a given PDF file.
-Data Parsing: The function parse_with_groq_llm sends the extracted text to Groq's LLM to structure the invoice data based on predefined rules.
-CSV Conversion: The function json_to_csv takes the structured JSON data and converts it into a CSV file.
-Main Execution: The main function orchestrates the process by calling the extraction, parsing, and CSV conversion functions in sequence.
-Error Handling
-The script includes error handling for the following:
-
-Text Extraction: If the PDF text extraction fails, the script will print an error message.
-Data Parsing: If Groq's LLM fails to parse the invoice data, the script will handle the exception and provide a message.
-CSV Conversion: If there are issues in saving the CSV file, the script will display an error message.
-Conclusion
-This script provides a robust solution for extracting and structuring invoice data from PDF files, converting it into a clean CSV format for further analysis or processing. It integrates advanced AI capabilities for accurate data extraction and can be easily extended or modified for additional use cases.
+Invalid Groq API Key: Ensure that the GROQ_API_KEY in your .env file is correct and active.
+PDF Parsing Errors: The pymupdf4llm library may not be able to extract text properly from certain types of PDFs (e.g., scanned documents). Ensure your PDFs are text-based.
+No Output Folder Created: If the RESULT_CSV folder is not created, ensure that you have permission to write to the directory, or modify the path to an existing directory.
