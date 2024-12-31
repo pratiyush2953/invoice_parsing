@@ -16,6 +16,27 @@ client = Groq(
 )
 # client = instructor.from_groq(client, mode=instructor.Mode.TOOLS)
 
+
+class InvoiceData(BaseModel):
+    invoice_number: List[str] = Field(..., description="List of invoice numbers")
+    invoice_date: List[str] = Field(..., description="List of invoice dates")
+    line_item_description: List[str] = Field(..., description="List of descriptions of the line item")
+    employee_name: Optional[List[str]] = None  # Can be None if not available
+    service_date: Optional[List[str]] = None  # Can be None if not available
+    county: List[str] = Field(..., description="List of counties")
+    location: List[str] = Field(..., description="List of locations")
+    work_order_number: List[str] = Field(..., description="List of work order numbers")
+    hours_qty: Optional[List[str]] = None  # Can be None if not available
+    unit: Optional[List[str]] = None  # Can be None if not available
+    rate: Optional[List[str]] = None  # Can be None if not available
+    invoiced_amount: List[str] = Field(..., description="List of invoiced amounts")
+    sub_total: Optional[List[str]] = None  # Can be None if not available
+    sales_tax: Optional[List[str]] = None  # Can be None if not available
+    total: Optional[List[str]] = None  # Can be None if not available
+    original_file: Optional[List[str]] = None  # Can be None if not available
+    invoice_pages: Optional[List[str]] = None  # Can be None if not available
+
+
 # Function to create folder if not exists
 def create_folder(folder_path):
     if not os.path.exists(folder_path):
